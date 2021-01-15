@@ -5,6 +5,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
   end
 
+  # test for get specific user request
   test 'should show user' do
     get api_v1_user_url(@user), as: :json
     assert_response :success
@@ -13,6 +14,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.email, json_response['email']
   end
 
+  # test for creating user
   test 'should create user' do
     assert_difference('User.count') do
       post api_v1_users_url, params: { user: { email: 'test@test.org', password: '123456' } }, as: :json
@@ -24,6 +26,17 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference('User.count') do
       post api_v1_users_url, params: { user: { email: @user.email, password: '123456' } }, as: :json
     end
+    assert_response :unprocessable_entity
+  end
+
+  # test for updating user (user needs to authenticate for updating)
+  test 'should update user' do
+    patch api_v1_user_url(@user), params: { user: { email: @user.email, password: '123456' } }, as: :json
+    assert_response :success
+  end
+
+  test 'should not update user when invalid params are sent' do
+    patch api_v1_user_url(@user), params: { user: { email: 'bad email', password: '123456' } }, as: :json
     assert_response :unprocessable_entity
   end
 end
