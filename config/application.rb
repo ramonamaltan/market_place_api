@@ -33,5 +33,8 @@ module MarketPlaceApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # to load json_web_token_rb file in lib folder
+    config.eager_load_paths << Rails.root.join('lib/tasks')
   end
 end
