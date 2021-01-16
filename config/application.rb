@@ -35,6 +35,6 @@ module MarketPlaceApi
     config.api_only = true
 
     # to load json_web_token_rb file in lib folder
-    config.eager_load_paths << Rails.root.join('lib')
+    config.eager_load_paths << Rails.root.join('lib/tasks')
   end
 end
