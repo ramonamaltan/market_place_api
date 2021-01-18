@@ -1,24 +1,27 @@
-# README
+### Marketplace API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Follow along the book [api_on_rails](https://github.com/madeindjs/api_on_rails) learning best practices to build REST APIs using Ruby on Rails 6, including setting up authentication with JSON Web Tokens (JWT), testing end-points with unit and functional tests, user JSON:API specification and optimize and cache the API.
 
-Things you may want to cover:
+#### User Endpoints:
+````
+GET /users/:id
+POST /users
+PATCH /users/:id
+DELTE /users
+````
 
-* Ruby version
+#### Product Endpoints:
+````
+GET /products
+GET /products/:id
+POST /products
+PATCH /products/:id
+DELTE /products
+````
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Order Endpoints:
+````
+GET /orders
+GET /orders/:id
+POST /orders
+````
