@@ -5,15 +5,18 @@ one:
   published: false
   title: TV Plosmo Philopps
   user: one
+  quantity: 5
 
 two:
   price: 499.99
   published: false
   title: Azos Zeenbok
   user: two
+  quantity: 5
 
 another_tv:
   price: 99.99
   published: false
   title: Cheap TV
   user: two
+  quantity: 5
