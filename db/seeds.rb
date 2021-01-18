@@ -10,7 +10,7 @@ puts 'Deleted all products and users'
 
   # Create 2 Products per user
   2.times do
-    product = Product.create!(title: Faker::Commerce.product_name, price: rand(1.0..100.0), published: true, user_id: user.id)
+    product = Product.create!(title: Faker::Commerce.product_name, price: rand(1.0..100.0), published: true, user_id: user.id, quantity: 50)
     puts "Created a brand new product: #{product.title}"
   end
 end
