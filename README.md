@@ -44,6 +44,11 @@ http://localhost:3000/api/v1/users/13
 ### Follow same system for Products and Orders Requests
 #### Products
 See all products: `GET /products`  
+Filter Products:
+````
+Params: recent, min_price, max_price, keyword
+e.g. $ curl http://localhost:3000/api/v1/products\?min_price\=50
+````
 Get a specific product: `GET /products/:id`  
 Create a product: `POST /products`  
 Update product info (needs Authorization Token): `PATCH /products/:id`  
