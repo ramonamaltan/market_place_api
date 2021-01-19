@@ -44,9 +44,12 @@ http://localhost:3000/api/v1/users/13
 ### Follow same system for Products and Orders Requests
 #### Products
 See all products: `GET /products`  
-Filter Products:
 ````
-Params: recent, min_price, max_price, keyword
+Filter Products:
+Params:
+- recent: sort by most recent product
+- min_price, max_price: filter by prices
+- keyword: filter by product title
 e.g. $ curl http://localhost:3000/api/v1/products\?min_price\=50
 ````
 Get a specific product: `GET /products/:id`  
