@@ -62,7 +62,7 @@ Create an order
 POST /orders
 ````
 
-#### Authorization Token
+### Authorization Token
 Create the token with the following command, replace email and password with your user data:
 ````
 $ curl -X POST --data "user[email]=example@gmail.com" --data "user[password]=123456" http://localhost:3000/api/v1/tokens
