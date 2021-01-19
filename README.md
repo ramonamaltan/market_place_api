@@ -46,10 +46,8 @@ http://localhost:3000/api/v1/users/13
 See all products: `GET /products`  
 Get a specific product: `GET /products/:id`  
 Create a product: `POST /products`  
-Update product info: `PATCH /products/:id`  
-needs Authorization Token  
-Delete a product: `DELETE /products/:id`  
-needs Authorization Token  
+Update product info (needs Authorization Token): `PATCH /products/:id`  
+Delete a product (needs Authorization Token): `DELETE /products/:id` 
 
 #### Orders
 See all orders: `GET /orders`  
