@@ -2,68 +2,79 @@
 
 Follow along the book [api_on_rails](https://github.com/madeindjs/api_on_rails) learning best practices to build REST APIs using Ruby on Rails 6, including setting up authentication with JSON Web Tokens (JWT), testing end-points with unit and functional tests, user JSON:API specification and optimize and cache the API.
 
+### Authorization Token
+Create the token with this command [replace email and password]
+````
+$ curl -X POST --data "user[email]=example@gmail.com" --data "user[password]=123456" http://localhost:3000/api/v1/tokens
+````
+
 ### Endpoints:
 
 #### Users
-Get a specific user
+##### Get a specific user
+`GET /users/:id`
 ````
-GET /users/:id
+$ curl http://localhost:3000/api/v1/users/1
 ````
-Create an user
+##### Create an user
+`POST /users`
 ````
-POST /users
+$ curl -X POST --data "user[email]=ockymarvin@jacobi.co" --data "user[password]=locadex1234" http://localhost:3000/api/v1/users
 ````
-Update user info
-````
-PATCH /users/:id
+##### Update user info
+`PATCH /users/:id`
 needs Authorization Token
 ````
-Delete a user
+$ curl -i -X PATCH \
+-H 'Content-Type: application/json' \
+-H 'Authorization: {token}' \
+-d '{ "user": { "email": "maxmuster@gmail.org" } }' \
+http://localhost:3000/api/v1/users/6
 ````
-DELETE /users/:id
+##### Delete a user
+`DELETE /users/:id`
 needs Authorization Token
+````
+$ curl -i -X DELETE
+-H 'Authorization: {token}'
+http://localhost:3000/api/v1/users/13
 ````
 
+### Follow same system for Products and Orders Requests
 #### Products
-See all products
+##### See all products
 ````
 GET /products
 ````
-Get a specific product
+##### Get a specific product
 ````
 GET /products/:id
 ````
-Create a product
+##### Create a product
 ````
 POST /products
 ````
-Update product info
+##### Update product info
 ````
 PATCH /products/:id
 needs Authorization Token
 ````
-Delete a product
+##### Delete a product
 ````
 DELETE /products/:id
 needs Authorization Token
 ````
 
 #### Orders
-See all orders
+##### See all orders
 ````
 GET /orders
 ````
-Get a specific order
+##### Get a specific order
 ````
 GET /orders/:id
 ````
-Create an order
+##### Create an order
 ````
 POST /orders
-````
-
-### Authorization Token
-Create the token with the following command, replace email and password with your user data:
-````
-$ curl -X POST --data "user[email]=example@gmail.com" --data "user[password]=123456" http://localhost:3000/api/v1/tokens
 ````
